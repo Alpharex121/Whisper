@@ -4,7 +4,7 @@ import dbConnect from '@/lib/dbConnect';
 import { User } from 'next-auth';
 import { Message } from '@/model/User';
 import { NextRequest } from 'next/server';
-import { authOptions } from '../../auth/[...nextauth]/options';
+import { authOptions } from '../../auth/[...nextauth]/[...nextauth].ts';
 
 export async function DELETE(
   request: Request,

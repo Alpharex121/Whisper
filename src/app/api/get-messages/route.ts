@@ -3,7 +3,7 @@ import UserModel from '@/model/User';
 import mongoose from 'mongoose';
 import { User } from 'next-auth';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/options';
+import { authOptions } from '../auth/[...nextauth]/[...nextauth].ts';
 
 export async function GET(request: Request) {
   await dbConnect();
