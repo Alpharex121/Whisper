@@ -34,7 +34,7 @@ export default function SignInForm() {
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
     console.log("button db rhi hai")
     const result = await signIn('credentials', {
-      redirect: true,
+      redirect: false,
       identifier: data.identifier,
       password: data.password,
     });
@@ -58,11 +58,8 @@ export default function SignInForm() {
     }
 
     if (result?.url) {
-      console.log('bhai sb shi chl rha hai')
-      console.log(result)
-      console.log(Credentials)
+      console.log("after sign in result: " + result)
       router.push("/dashboard");   
-      console.log("redirect ho raha haa")
     }
   };
 
@@ -100,7 +97,7 @@ export default function SignInForm() {
               )}
             />
             
-            <Button className='w-full' type="submit">Sign In </Button>
+            <Button className='w-full' type="submit" onClick={()=>console.log('button clicked')}>Sign In </Button>
           </form>
         </Form>
         <div className="text-center mt-4">

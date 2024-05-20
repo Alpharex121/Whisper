@@ -16,6 +16,7 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials: any): Promise<any> {
         await dbConnect();
         try {
+          console.log("here")
           const user = await UserModel.findOne({
             $or: [
 
@@ -25,6 +26,8 @@ export const authOptions: NextAuthOptions = {
                { username: credentials.identifier },
             ],
           });
+          console.log(credentials)
+          console.log(user)
           if (!user) {
             throw new Error('No user found with this email');
           }
@@ -63,6 +66,9 @@ export const authOptions: NextAuthOptions = {
         session.user.isAcceptingMessages = token.isAcceptingMessages;
         session.user.username = token.username;
       }
+
+      console.log("sign in sesssion: ")
+      console.log(session)
       return session;
     },
   },
