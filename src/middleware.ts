@@ -19,8 +19,7 @@ export async function middleware(request: NextRequest) {
       url.pathname === '/')
   ) {
     console.log(token)
-    // return NextResponse.redirect(new URL('/dashboard', request.url));
-    return permanentRedirect("/dashboard")
+    return NextResponse.redirect(new URL('/dashboard', request.url));
   }
 
   if (!token && url.pathname.startsWith('/dashboard')) {
