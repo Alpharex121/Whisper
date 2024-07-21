@@ -69,6 +69,7 @@ export const authOptions: NextAuthOptions = {
 
       console.log("sign in sesssion: ")
       console.log(session)
+
       return session;
     },
   },

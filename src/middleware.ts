@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 export { default } from 'next-auth/middleware';
+import { permanentRedirect } from 'next/navigation';
 
 export const config = {
   matcher: ['/dashboard/:path*', '/sign-in', '/sign-up', '/',],
@@ -18,7 +19,8 @@ export async function middleware(request: NextRequest) {
       url.pathname === '/')
   ) {
     console.log(token)
-    return NextResponse.redirect(new URL('/dashboard', request.url));
+    // return NextResponse.redirect(new URL('/dashboard', request.url));
+    return permanentRedirect("/dashboard")
   }
 
   if (!token && url.pathname.startsWith('/dashboard')) {
