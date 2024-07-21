@@ -3,6 +3,8 @@ import { getToken } from 'next-auth/jwt';
 export { default } from 'next-auth/middleware';
 import { permanentRedirect } from 'next/navigation';
 
+
+console.log("in middleware")
 export const config = {
   matcher: ['/dashboard/:path*', '/sign-in', '/sign-up', '/',],
 };
@@ -18,7 +20,7 @@ export async function middleware(request: NextRequest) {
       url.pathname.startsWith('/verify') ||
       url.pathname === '/')
   ) {
-    console.log(token)
+    console.log("token: "  + token)
     return NextResponse.redirect(new URL('/dashboard', request.url));
   }
 
