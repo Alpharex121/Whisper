@@ -27,6 +27,7 @@ function Navbar() {
               Logout
             </Button>
           </>
+          {console.log(user)}
         ) : (
           <>
           <Link href="/sign-in">
