@@ -10,7 +10,8 @@ export const config = {
 };
 
 export async function middleware(request: NextRequest) {
-  const token = await getToken({ req: request });
+  const token = await getToken({ req: request,
+  cookieName: "__Secure-next-auth.session-token"});
   console.log(token)
   const url = request.nextUrl;
   if (

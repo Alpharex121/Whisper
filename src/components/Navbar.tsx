@@ -26,7 +26,6 @@ function Navbar() {
             <Button onClick={() => signOut()} className="w-full md:w-auto bg-slate-100 text-black" variant='outline'>
               Logout
             </Button>
-            {console.log(user)}
           </>
         ) : (
           <>
