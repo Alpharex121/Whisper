@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 export { default } from 'next-auth/middleware';
 import { permanentRedirect } from 'next/navigation';
-// mene pull kr liya
 
 console.log("in middleware")
 export const config = {
