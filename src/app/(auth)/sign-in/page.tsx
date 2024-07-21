@@ -59,7 +59,7 @@ export default function SignInForm() {
 
     if (result?.url) {
       console.log("after sign in result: " + result)
-      router.push("/dashboard");   
+      window.location.replace("/dashboard"); 
     }
   };
 
