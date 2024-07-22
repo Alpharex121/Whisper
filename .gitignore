@@ -13,6 +13,9 @@
 /.next/
 /out/
 
+.env
+.env.example
+
 
 # misc
 .DS_Store
